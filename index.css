@@ -63,8 +63,7 @@ h1 {
     padding: 0.5rem 0;
     padding-left: 0.5rem;
     margin-top: 0.5rem;
-    text-align: left center;
-    font-size: 16px;
+    font-size: 1rem;
     border-radius: 3px;
     border: 1px solid darkgray; 
 }
@@ -82,5 +81,15 @@ h1 {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05); 
+}
+
+span{
+    font-size: 0.8rem;
+    padding: 0.5rem 0 1rem 0;
+    display: block;
+}
+
+textarea{
+    height: 20rem;
 }
   
