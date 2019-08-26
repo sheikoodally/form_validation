@@ -51,17 +51,19 @@ h1 {
   justify-content: space-between; 
 }
 
-.container-input .input-mid {
-    width: 50%; 
+.input-mid {
+    width: 49%; 
 }
 
-.container-input .input-total {
+.input-total {
     width: 100%; 
 }
 
 .container-input input {
-    padding-top: 1rem;
+    padding: 0.5rem 0;
+    padding-left: 0.5rem;
     margin-top: 0.5rem;
+    text-align: left center;
     font-size: 16px;
     border-radius: 3px;
     border: 1px solid darkgray; 
