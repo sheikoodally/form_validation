@@ -72,9 +72,10 @@ h1 {
     background: crimson;
     color: #fff;
     margin: auto;
-    padding: 10px 40px;
+    padding: 1rem 2rem;
+    border-radius: 5%;
     cursor: pointer;
-    font-size: 22px; 
+    font-size: 1.5rem; 
 }
 
 .container-input .btn-send:active {
@@ -86,7 +87,7 @@ h1 {
 span{
     font-size: 0.8rem;
     padding: 0.5rem 0 1rem 0;
-    display: block;
+    display: none;
 }
 
 textarea{

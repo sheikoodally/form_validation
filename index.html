@@ -10,43 +10,44 @@
   </head>
       <body>
       <h1>Form Validation</h1>
-      <form class="form-register" action="thanks.html" method="post" onsubmit="return validate();">
+
+      <form class="form-register" method="post" onsubmit="return validate();">
       <h2 class="form__title">Create an Account</h2>
       <div class="container-input">
 
         <div class="input-mid">
-            <input class="input-total" id="firstname" type="text" name="firstname" maxlength="25" placeholder="First Name">
-            <span id=""></span>
+            <input class="input-total" id="firstname" type="text" name="firstname" oninput="checkFirstName();" placeholder="First Name">
+            <span id="firstname_span"></span>
         </div>
 
         <div class="input-mid">
-            <input class="input-total" id="lastname" type="text" name="lastname" maxlength="20" placeholder="Last Name">
-            <span id=""></span>
+            <input class="input-total" id="lastname" type="text" name="lastname" placeholder="Last Name">
+            <span id="lastname_span"></span>
         </div>
 
         <div class="input-total">
-            <input class="input-total" id="email" type="email" name="email" maxlength="30" placeholder="E-mail Address">
-            <span id=""></span>
+            <input class="input-total" id="email" type="email" name="email" placeholder="E-mail Address">
+            <span id="email_span"></span>
         </div>
         
         <div class="input-total">
-            <input class="input-total" id="username" type="text" name="username" maxlength="20"  placeholder="Username">
-            <span id=""></span>
+            <input class="input-total" id="username" type="text" name="username" placeholder="Username">
+            <span id="username_span"></span>
         </div>
 
         <div class="input-mid">
-            <input class="input-total" id="password" type="password" name="password" maxlength="20" placeholder="Password">
-            <span id="">psst</span>
+            <input class="input-total" id="password" type="password" name="password" placeholder="Password">
+            <span id="password_span">psst</span>
         </div>
 
         <div class="input-mid">
-            <input class="input-total" id="confirmPassword" type="password" name="confirmPassword" maxlength="20" placeholder="Re enter Password">
-            <span id=""></span>
+            <input class="input-total" id="confirmPassword" type="password" name="confirmPassword" placeholder="Re enter Password">
+            <span id="confirmPassword_span"></span>
         </div>
 
         <div class="input-total">
-            <input class="input-total" id="mobile" type="text" name="mobile" maxlength="15" placeholder="Mobile#">
-            <span id="">hey</span>
+            <input class="input-total" id="mobile" type="text" name="mobile" maxlength="15" onblur="checkmobile();" placeholder="Mobile#">
+            <span id="mobile_span"></span>
         </div>
 
         <p> message: <br/><textarea cols="55" name="msg" id="message" maxlength="500" placeholder="Maxlength:500 alphanumeric characters"></textarea> <br><br><br></p>
