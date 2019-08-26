@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <title> Simple Form Validation - Sheik Oodallyn</title>
+   <link rel="stylesheet" type="text/css" href="index.css">
+
+  </head>
+      <body>
+      <h1>Form Validation</h1>
+      <form class="form-register" action="thanks.html" method="post" onsubmit="return validate();">
+      <h2 class="form__title">Create an Account</h2>
+      <div class="container-input">
+
+        <div class="input-mid">
+            <input id="firstname" type="text" name="firstname" maxlength="25" placeholder="First Name">
+            <span id=""></span>
+        </div>
+        
+        <div class="input-mid">
+            <input id="lastname" type="text" name="lastname" maxlength="20" placeholder="Last Name">
+            <span id=""></span>
+        </div>
+
+        <div class="input-total">
+        <input id="email" type="email" name="email" maxlength="30" placeholder="E-mail Address">
+        <span id=""></span></div>
+        
+
+        <input class="input-total" id="username" type="text" name="username" maxlength="20"  placeholder="Username">
+        <span id=""></span>
+
+        <input class="input-mid" id="password" type="password" name="password" maxlength="20" placeholder="Password">
+        <span id=""></span>
+
+        <input class="input-mid" id="confirmPassword" type="password" name="password" maxlength="20" placeholder="Password">
+        <span id=""></span>
+
+        <input class="input-total" id="mobile" type="text" name="mobile" maxlength="15" placeholder="Mobile#">
+        <span id=""></span>
+
+        <p> message: <br/><textarea cols="61" rows="10" name="msg" id="message" maxlength="500" placeholder="Maxlength:500 alphanumeric characters"></textarea> <br><br><br></p>
+        
+        <input class= "btn-send" type="submit" value="Sign Me Up">
+        </div>
+    </form>
+
+    <script src="index.js"></script>
+
+  </body>
+</html>
