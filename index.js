@@ -27,24 +27,6 @@ function validate() {
     //must contain 1 upper , 1 lower , optional digit or special char
     const passwordRegex = new RegExp(/^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(^[a-zA-Z0-9@\$=!:.#%]+$)/)
 
-
-    /* if(passwordRegex.test(password) == false){
-        console.log("no good");
-    }
-    else if (passwordRegex.test(password) == true){
-        console.log("tested");
-    } */
-
-    if(password == confirmPassword){
-        console.log("password matches");
-    }
-    else if (password !== confirmPassword){
-        console.log("password does not match");
-    }
-    else {
-        console.log("error");
-    }
-
     //
     if(firstname.trim() == "" && nameRegex.test(firstname) == false){
         document.getElementById("firstname_span").innerHTML = ("Please enter your firstname")
@@ -128,6 +110,17 @@ function validate() {
         mobile_span.style.display = "none";
         mobileCheck = true;
     }
+
+    //add username to session storage
+    if (typeof(Storage) !== "undefined") {
+        // Store
+        sessionStorage.setItem("username", username);
+        
+        //clear
+        sessionStorage.clear();
+    } else {
+        console.log("Sorry, your browser does not support Web Storage...");
+      }
   
     if (firstCheck == false || lastCheck == false || usernameCheck == false || emailCheck == false || passwordCheck == false || confirmPasswordCheck == false || mobileCheck == false){
         return false;
