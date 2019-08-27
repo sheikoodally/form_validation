@@ -25,7 +25,7 @@ function validate() {
     const nameRegex = new RegExp(/^[a-zA-Z\s]{2,30}$/);
     const phoneRegex = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
     //must contain 1 upper , 1 lower , optional digit or special char
-    const passwordRegex = new RegExp(/^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(^[a-zA-Z0-9@\$=!:.#%]+$)/)
+    const passwordRegex = new RegExp(/^.*(?=.{6,})(?=.*[a-z])(?=.*[A-Z])(^[a-zA-Z0-9@\$=!:.#%]+$)/)
 
     //
     if(firstname.trim() == "" && nameRegex.test(firstname) == false){
