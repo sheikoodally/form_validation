@@ -24,13 +24,25 @@ function validate() {
     //regex
     const nameRegex = new RegExp(/^[a-zA-Z\s]{2,30}$/);
     const phoneRegex = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+    //must contain 1 upper , 1 lower , optional digit or special char
+    const passwordRegex = new RegExp(/^.*(?=.{8,})(?=.*[a-z])(?=.*[A-Z])(^[a-zA-Z0-9@\$=!:.#%]+$)/)
 
 
-    if(phoneRegex.test(mobile) == false){
+    /* if(passwordRegex.test(password) == false){
         console.log("no good");
     }
-    else if (phoneRegex.test(mobile) == true){
+    else if (passwordRegex.test(password) == true){
         console.log("tested");
+    } */
+
+    if(password == confirmPassword){
+        console.log("password matches");
+    }
+    else if (password !== confirmPassword){
+        console.log("password does not match");
+    }
+    else {
+        console.log("error");
     }
 
     //
@@ -82,32 +94,32 @@ function validate() {
     }
 
     //
-    if(password.trim() == ""){
-        document.getElementById("password_span").innerHTML = ("Invalid Password")
+    if(password.trim() == "" && passwordRegex.test(password) == false){
+        document.getElementById("password_span").innerHTML = ("Password must contain 6 charcters including 1 lower case letter and 1 uppcase letter")
         password_span.style.display = "block";
         password_span.style.color = "red";
         passwordCheck = false;
     }   
-    else if(password.trim() !== ""){
+    else if(password.trim() !== "" && passwordRegex.test(password) == true){
         password_span.style.display = "none";
         passwordCheck = true;
     }
 
     //
-    if(confirmPassword.trim() == ""){
+    if(confirmPassword.trim() == "" && password !== confirmPassword){
         document.getElementById("confirmPassword_span").innerHTML = ("Password does not match ")
         confirmPassword_span.style.display = "block";
         confirmPassword_span.style.color = "red";
         confirmPasswordCheck = false;
     }
-    else if(confirmPassword.trim() !== ""){
+    else if(confirmPassword.trim() !== "" && password == confirmPassword){
         confirmPassword_span.style.display = "none";
         confirmPasswordCheck = true;
     }
 
     //
     if(mobile.trim() == "" && phoneRegex.test(mobile) == false){
-        mobile_span.innerHTML = ("Please enter your number")
+        mobile_span.innerHTML = ("Please enter your number, Ex 226 500 8745")
         mobile_span.style.display = "block";
         mobile_span.style.color = "red";
         mobileCheck = false;
