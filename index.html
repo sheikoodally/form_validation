@@ -16,12 +16,12 @@
       <div class="container-input">
 
         <div class="input-mid">
-            <input class="input-total" id="firstname" type="text" name="firstname" oninput="checkFirstName();" placeholder="First Name">
+            <input class="input-total" id="firstname" type="text" maxlength="30" name="firstname" placeholder="First Name">
             <span id="firstname_span"></span>
         </div>
 
         <div class="input-mid">
-            <input class="input-total" id="lastname" type="text" name="lastname" placeholder="Last Name">
+            <input class="input-total" id="lastname" type="text" name="lastname" maxlength="30" placeholder="Last Name">
             <span id="lastname_span"></span>
         </div>
 
@@ -46,12 +46,9 @@
         </div>
 
         <div class="input-total">
-            <input class="input-total" id="mobile" type="text" name="mobile" maxlength="15" onblur="checkmobile();" placeholder="Mobile#">
+            <input class="input-total" id="mobile" type="text" name="mobile" maxlength="14" placeholder="Mobile#">
             <span id="mobile_span"></span>
-        </div>
-
-        <p> message: <br/><textarea cols="55" name="msg" id="message" maxlength="500" placeholder="Maxlength:500 alphanumeric characters"></textarea> <br><br><br></p>
-        
+        </div>        
         <input class= "btn-send" type="submit" value="Sign Me Up">
         </div>
     </form>

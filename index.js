@@ -8,8 +8,6 @@ function validate() {
     var password = document.getElementById('password').value;
     var confirmPassword = document.getElementById('confirmPassword').value;
     var mobile = document.getElementById('mobile').value;
-    var message = document.getElementById('message').value;
-
 
     //spans
     var firstname_span = document.getElementById('firstname_span');
@@ -23,26 +21,38 @@ function validate() {
     //checks if all data is valid
     let firstCheck, lastCheck, emailCheck, mobileCheck, passwordCheck, confirmPasswordCheck, usernameCheck = false;
 
+    //regex
+    const nameRegex = new RegExp(/^[a-zA-Z\s]{2,30}$/);
+    const phoneRegex = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+
+
+    if(phoneRegex.test(mobile) == false){
+        console.log("no good");
+    }
+    else if (phoneRegex.test(mobile) == true){
+        console.log("tested");
+    }
+
     //
-    if(firstname.trim() == ""){
+    if(firstname.trim() == "" && nameRegex.test(firstname) == false){
         document.getElementById("firstname_span").innerHTML = ("Please enter your firstname")
         firstname_span.style.display = "block";
         firstname_span.style.color = "red";
         firstCheck = false;
     }
-    else if(firstname.trim() !== ""){
+    else if(firstname.trim() !== "" && nameRegex.test(firstname) == true){
         firstname_span.style.display = "none";
         firstCheck = true;
     }
 
    //
-   if(lastname.trim() == ""){
+   if(lastname.trim() == "" && nameRegex.test(lastname) == false){
         document.getElementById("lastname_span").innerHTML = ("Please enter your lastname")
         lastname_span.style.display = "block";
         lastname_span.style.color = "red";
         lastCheck = false;
     }
-    else if(lastname.trim() !== ""){
+    else if(lastname.trim() !== "" && nameRegex.test(lastname) == true){
         lastname_span.style.display = "none";
         lastCheck = true;
     }
@@ -96,13 +106,13 @@ function validate() {
     }
 
     //
-    if(mobile.trim() == ""){
+    if(mobile.trim() == "" && phoneRegex.test(mobile) == false){
         mobile_span.innerHTML = ("Please enter your number")
         mobile_span.style.display = "block";
         mobile_span.style.color = "red";
         mobileCheck = false;
     }
-    else if(mobile.trim() !== ""){
+    else if(mobile.trim() !== "" && phoneRegex.test(mobile) == true){
         mobile_span.style.display = "none";
         mobileCheck = true;
     }
@@ -113,87 +123,3 @@ function validate() {
    
  }
 
-
- /* function checkmobile(){
-
-    if(mobile.trim() == ""){
-        mobile_span.innerHTML = ("Please enter your number")
-        mobile_span.style.display = "block";
-        mobile_span.style.color = "red";
-    }
-    else if(mobile.trim() !== ""){
-        mobile_span.style.display = "none";
-    }
-}
-
-function checkConfirmPassword(){
-
-    if(confirmPassword.trim() == ""){
-        document.getElementById("confirmPassword_span").innerHTML = ("Password does not match ")
-        confirmPassword_span.style.display = "block";
-        confirmPassword_span.style.color = "red";
-    }
-    else if(confirmPassword.trim() !== ""){
-        confirmPassword_span.style.display = "none";
-    }
-}
-
-function checkPassword(){
-
-    if(password.trim() == ""){
-        document.getElementById("password_span").innerHTML = ("Invalid Password")
-        password_span.style.display = "block";
-        password_span.style.color = "red";
-    }   
-    else if(password.trim() !== ""){
-        password_span.style.display = "none";
-    }
-}
-
-function checkUsername(){
-
-    if(username.trim() == ""){
-        document.getElementById("username_span").innerHTML = ("Please enter your username")
-        username_span.style.display = "block";
-        username_span.style.color = "red";
-    }
-    else if(username.trim() !== ""){
-        username_span.style.display = "none";
-    }
-}
-
-function checkEmail(){
-
-    if(email.trim() == ""){
-        document.getElementById("email_span").innerHTML = ("Please enter your email")
-        email_span.style.display = "block";
-        email_span.style.color = "red";
-    }
-    else if(email.trim() !== ""){
-        email_span.style.display = "none";
-    }
-}
-
-function checkLastname(){
-
-    if(lastname.trim() == ""){
-        document.getElementById("lastname_span").innerHTML = ("Please enter your lastname")
-        lastname_span.style.display = "block";
-        lastname_span.style.color = "red";
-    }
-    else if(lastname.trim() !== ""){
-        lastname_span.style.display = "none";
-    }
-}
-
-function checkFirstName(){
-
-    if(firstname.trim() == ""){
-        document.getElementById("firstname_span").innerHTML = ("Please enter your firstname")
-        firstname_span.style.display = "block";
-        firstname_span.style.color = "red";
-    }
-    else if(firstname.trim() !== ""){
-        firstname_span.style.display = "none";
-    }
-} */
